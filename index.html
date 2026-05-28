@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4x4 Square Image Grid</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .image-grid {
+            display: grid;
+            /* Creates 4 equal columns */
+            grid-template-columns: repeat(4, 1fr); 
+            /* Spacing between images */
+            gap: 15px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            width: 100%;
+            /* Forces the container to be a square */
+            aspect-ratio: 1 / 1; 
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            /* Ensures the image fills the square without stretching */
+            object-fit: cover; 
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustment: 2 per line on tablets, 1 on mobile */
+        @media (max-width: 900px) {
+            .image-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .image-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center">Gallery Grid</h2>
+
+    <div class="image-grid">
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 1"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 2"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 3"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 4"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 5"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 6"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 7"></div>
+        <div class="grid-item"><img src="https://via.placeholder.com/500" alt="Image 8"></div>
+    </div>
+
+</body>
+</html>
 
